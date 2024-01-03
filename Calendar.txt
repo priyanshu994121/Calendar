@@ -1,0 +1,380 @@
+class calendar
+{
+    public void main(int d,int m,int y)
+    {   switch (m)
+        {case 1:
+         System.out.println("\t         JANUARY  "+y+"\n");
+         break;
+         case 2:
+         System.out.println("\t         FEBRUARY  "+y+"\n");
+         break;
+         case 3:
+         System.out.println("\t         MARCH  "+y+"\n");
+         break;
+         case 4:
+         System.out.println("\t         APRIL  "+y+"\n");
+         break;
+         case 5:
+         System.out.println("\t         MAY  "+y+"\n");
+         break;
+         case 6:
+         System.out.println("\t         JUNE  "+y+"\n");
+         break;
+         case 7:
+         System.out.println("\t         JULY  "+y+"\n");
+         break;
+         case 8:
+         System.out.println("\t         AUGUST  "+y+" \n");
+         break;
+         case 9:
+         System.out.println("\t         SEPTEMBER  "+y+"\n");
+         break;
+         case 10:
+         System.out.println("\t         OCTOBER  "+y+" \n");
+         break;
+         case 11:
+         System.out.println("\t         NOVEMBER  "+y+"\n");
+         break;
+         case 12:
+         System.out.println("\t         DECEMBER  "+y+"\n");
+         break;
+        }
+            
+        int od=0,ry,ly,oy,fod;
+        if(y>=1600 && y<=2000)
+        {
+           if(y>=1600 && y<=1700)
+           {
+               od=0;
+               ry=y-1600-1;
+               ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=1700 && y<=1800)
+            {
+                od=5;
+                ry=y-1700-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=1800 && y<=1900)
+            {
+                od=3;
+                ry=y-1800-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=1900 && y<=2000)
+            {
+                od=1;
+                ry=y-1900-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+        }
+        else if(y>=2000 && y<=2400)
+        {
+           if(y>=2000 && y<=2100)
+           {
+               od=0;
+               ry=y-2000-1;
+               ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=2100 && y<=2200)
+            {
+                od=5;
+                ry=y-2100-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=2200 && y<=2300)
+            {
+                od=3;
+                ry=y-2200-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+            if(y>=2300 && y<=2400)
+            {
+                od=1;
+                ry=y-2300-1;
+                ly=ry/4;
+               oy=ry-ly;
+               od+=ly*2+oy;
+            }
+        }
+        
+           
+        if(m==1)
+        od+=1;
+        if(m==2)
+        od+=31+1;
+        if(m==3)
+        od+=31+28+1;
+        if(m==4)
+        od+=31+28+31+1;
+        if(m==5)
+        od+=31+28+31+30+1;
+        if(m==6)
+        od+=31+28+31+30+31+1;
+        if(m==7)
+        od+=31+28+31+30+31+30+1;
+        if(m==8)
+        od+=31+28+31+30+31+30+1+31;
+        if(m==9)
+        od+=31+28+31+30+31+30+1+31+31;
+        if(m==10)
+        od+=31+28+31+30+31+30+1+31+31+30;
+        if(m==11)
+        od+=31+28+31+30+31+30+1+31+31+30+31;
+        if(m==12)
+        od+=31+28+31+30+31+30+1+31+31+30+31+30;
+        if(y%400==0)
+        od++;
+        if(y%4==0 && y%100!=0)
+        od++;
+        fod=od%7;
+        
+        if(fod==0)
+        System.out.print( " SUN   MON   TUE   WED   THU   FRI   SAT  ");
+        if(fod==1)
+        System.out.print( " MON   TUE   WED   THU   FRI   SAT   SUN  ");
+        if(fod==2)
+        System.out.print( " TUE   WED   THU   FRI   SAT   SUN   MON  ");
+        if(fod==3)
+        System.out.print( " WED   THU   FRI   SAT   SUN   MON   TUE  ");
+        if(fod==4)
+        System.out.print( " THU   FRI   SAT   SUN   MON   TUE   WED  ");
+        if(fod==5)
+        System.out.print( " FRI   SAT   SUN   MON   TUE   WED   THU  ");
+        if(fod==6)
+        System.out.print( " SAT   SUN   MON   TUE   WED   THU   FRI  ");
+        
+        
+     String jan[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String feb[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","       ","      ","      ","      ","      ","     "}};
+     String mar[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String apr[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","      ","      ","      ","      ","     "}};
+     String may[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String jun[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","      ","      ","      ","      ","     "}};
+     String jul[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String aug[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String sep[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","      ","      ","      ","      ","     "}};
+     String oct[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+     String nov[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","      ","      ","      ","      ","     "}};
+     String dec[][]={{" 1     ","2      ","3     ","4     ","5     ","6     ","7    "},
+                     {" 8     ","9      ","10    ","11    ","12    ","13    ","14   "},
+                     {" 15    ","16     ","17    ","18    ","19    ","20    ","21   "},
+                     {" 22    ","23     ","24    ","25    ","26    ","27    ","28   "},
+                     {" 29    ","30     ","31    ","      ","      ","      ","     "}};
+      switch (m) 
+      {
+      case 1:
+      {System.out.println("\t"+"\n");
+          for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(jan[i][j]);
+            }
+            System.out.println();
+      
+        }
+        break;
+       }
+       case 2:
+       {
+           System.out.println("\t"+"\n");
+           for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(feb[i][j]);
+            }
+            System.out.println();
+            }
+            break;
+        }
+        case 3:
+        {
+         System.out.println("\t"+"\n");
+         for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(mar[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+       case 4:
+       {
+         System.out.println("\t"+"\n");
+         for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(apr[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+       case 5:
+       {
+        System.out.println("\t"+"\n");
+        for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(may[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 6:
+    {
+        System.out.println("\t"+"\n");
+        for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(jun[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 7:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(jul[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 8:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(aug[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 9:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(sep[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 10:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(oct[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 11:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(nov[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+    case 12:
+    {
+      System.out.println("\t"+"\n");
+      for(int i=0;i<=4;i++)
+      {
+          for(int j=0;j<=6;j++)
+          {
+              System.out.print(dec[i][j]);
+            }
+            System.out.println();
+       }
+       break;
+    }
+      }}}
